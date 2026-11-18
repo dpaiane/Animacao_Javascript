@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações</title>
+    <style>
+        body{
+            font-family: Arial;
+            text-align: center;
+        }
+        #area{
+            width: 500px;
+            height: 200px;
+            background-color: #ddd;
+            margin: 30px auto;
+            position: relative;
+        }
+        #quadrado{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+            left: 0px;
+            top: 75px;
+        }
+    </style>
+</head>
+<body>
+    <H1>Animações em javascript</H1>
+    <h3>Como movimentar elementos pela tela</h3>
+
+    <div id="area">
+        <div id="quadrado"></div>
+    </div>
+
+    <button id="btn" onclick="mover()">Mover objeto</button>
+
+    <script>
+        //let btn = document.getElementById("btn");
+        //let elemento = document.getElementById("quadrado");
+
+        //let posicao = 0;
+
+        //btn.addEventListener("click", ()=>{
+        //    elemento.style.left = "200px";
+        //});
+
+        let posicao = 0;
+
+        function mover() {
+            let elemento = document.getElementById("quadrado");
+            // Executa a cada 20 milissegundos
+            let intervalo = setInterval(function() {
+                posicao = posicao + 2
+                elemento.style.left = posicao + "px";
+                // Quando chegar ao limite, para
+                if (posicao >= 450) {
+                    clearInterval(intervalo);
+                }
+            }, 20);
+        }
+    </script>
+</body>
+</html>
