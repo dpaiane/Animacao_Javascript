@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opacidade</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        #caixa {
+            background-color: purple;
+            color: white;
+            padding: 40px;
+            margin: 30px;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+        #caixa.esconder {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Efeito de transparência</h1>
+    <p>Animações no Javascript</p>
+
+    <div id="caixa">Animação Javascript</div>
+
+    <button onclick="alternar()">Mostrar/Esconder</button>
+
+    <script>
+        function alternar(){
+            let elemento = document.getElementById("caixa");
+            elemento.classList.toggle("esconder");
+        }
+    </script>
+</body>
+</html>
