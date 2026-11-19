@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <style>
+        /* estilo do componente */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background: #eee;
+        }
+        .card {
+            background: white;
+            width: 250px;
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.4s;
+        }
+        .card-destaque {
+            transform: scale(1.08);
+            box-shadow: 0 10px 20px #888;
+            background: #debafe;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #1e40af;
+        }
+    </style>
+</head>
+<body>
+    <h1>Efeito de hover em botões e cards</h1>
+    <!-- padrao de card -->
+    <div class="card" id="card">
+        <h2>Manutenção</h2>
+        <p>Serviços de manutenção de computadores.</p>
+        <button>Saiba mais</button>
+    </div>
+
+    <script>
+        let card = document.getElementById("card");
+        
+        card.addEventListener("mouseover", ()=>{
+            card.classList.add("card-destaque");
+        });
+
+        card.addEventListener("mouseleave", ()=>{
+            card.classList.remove("card-destaque");
+        });
+    </script>
+</body>
+</html>
