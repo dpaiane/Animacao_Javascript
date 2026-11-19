@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes</title>
+    <style>
+        body{
+            background: #172554;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            padding-top: 150px;
+        }
+        h1{
+            font-size: 35px;
+        }
+        h1::after{
+            content: "|";
+            animation: piscar 0.7s infinite;
+        }
+        @keyframes piscar{
+            50%{
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Efeito de máquina de escrever</h2>
+    <p>
+        Esse efeito é bastante usado em páginas iniciais de sites,
+        portfóilios e apresentações de empresas.
+    </p>
+
+    <h1 id="texto"></h1>
+
+    <script>
+        let mensagem = "Bem-vindo ao nosso site!"
+        let posicao = 0;
+        let texto = document.getElementById("texto");
+
+        let intervalo = setInterval(()=>{
+            // adiciona o texto
+            texto.textContent += mensagem.charAt(posicao);
+            posicao++;
+
+            // verifica se terminou
+            if(posicao >= mensagem.length){
+                clearInterval(intervalo);
+            }
+        }, 100);
+    </script>
+</body>
+</html>
