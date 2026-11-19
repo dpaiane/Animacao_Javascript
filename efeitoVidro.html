@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito vidro</title>
+    <style>
+        /* 
+        1 fundo semitransparente 
+        2 desfoque do que tá atrás
+        3 borda sutil para simular reflexo na quina do vidro
+        4 sombra suave para profundidade
+        */
+
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: sans-serif;
+        }
+
+        .card-vidro{
+            width: 320px;
+            padding: 32px;
+            color:white;
+            background: rgba(255,255,255, 0.3);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="card-vidro">
+        <h2>Efeito de vidro</h2>
+        <p>O conteúdo atrás deste cartão dica desfocado, criando a sensação de vidro fosco.</p>
+    </div>
+</body>
+</html>
