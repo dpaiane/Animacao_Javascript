@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+        /* Cabeçalho */
+        header {
+            background: #172554;
+            color: white;
+            padding: 20px;
+        }
+        /* Botão do menu */
+        #botao-menu {
+            font-size: 25px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        /* Menu escondido inicialmente */
+        nav {
+            display: none;
+            margin-top: 20px;
+        }
+        /* Links */
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        /* Efeito ao passar o mouse */
+        nav a:hover {
+            background: #2563eb;
+        }
+        /* Menu aberto */
+        nav.aberto {
+            display: block;
+        }
+        main {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button id="botao-menu">
+            ☰
+        </button>
+        <nav id="menu">
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Bem vindo!</h1>
+        <p>Exemplo de menu sanduiche.</p>
+    </main>
+    <script>
+        let botao = document.getElementById("botao-menu");
+        let menu = document.getElementById("menu");
+        
+        botao.addEventListener("click", function() {
+            // Abre ou fecha o menu
+            menu.classList.toggle("aberto");
+            // Verifica se o menu está aberto
+            let aberto = menu.classList.contains("aberto");
+            // Atualiza o ícone
+            if (aberto) {
+                botao.textContent = "✕";
+            } else {
+                botao.textContent = "☰";
+            }
+            // Atualiza o estado de acessibilidade
+            botao.setAttribute("aria-expanded", aberto);
+        });
+    </script>
+</body>
+</html>
