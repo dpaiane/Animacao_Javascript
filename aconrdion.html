@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordion</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 700px;
+            margin: 50px auto;
+        }
+        .pergunta{
+            width: 100%;
+            padding: 15px;
+            text-align: left;
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .resposta{
+            max-height: 0;
+            overflow: hidden;
+            background: #eee;
+            transition: max-height 0.5s ease;
+        }
+        .resposta.aberta{
+            max-height: 150px;
+        }
+        .resposta p{
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Acordion</h1>
+    <p>Muito utilizado em páginas de perguntas frequêntes, tutoriais e documentação.</p>
+
+    <h1>Perguntas frequentes</h1>
+
+    <div class="acordion">
+
+            <button class="pergunta">O que é Javascript?</button>
+            <div class="resposta">
+                <p>
+                    Javascript é uma linguagem de programação
+                    utilizada para adicionar interatividade
+                    às páginas da web.
+                </p>
+            </div>
+
+            <button class="pergunta">O que é HTML?</button>
+            <div class="resposta">
+                <p>
+                    HTML é uma linguagem de marcação usada para
+                    estruturar páginas web.
+                </p>
+            </div>
+
+            <button class="pergunta">O que é CSS?</button>
+            <div class="resposta">
+                <p>
+                    CSS é utilizado para definir a aparência
+                    e a formatação das páginas web.
+                </p>
+            </div>
+    </di>
+
+    <script>
+        let perguntas = document.querySelectorAll(".pergunta");
+        perguntas.forEach(function(pergunta){
+            pergunta.addEventListener("click", function(){
+                let resposta = pergunta.nextElementSibling;
+                resposta.classList.toggle("aberta");
+            });
+        });
+    </script>
+</body>
+</html>
