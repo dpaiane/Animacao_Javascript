@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background: #eee;
+        }
+        .contador {
+            background: white;
+            width: 250px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .contador h2 {
+            font-size: 50px;
+            color: #2563eb;
+        }
+        button {
+            padding: 15px 25px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Contador animado</h2>
+    <p>
+        Esse efeito é usado em sites empresariais para mostrar
+        estatísticas, como quantidade de clientes, projetos
+        e serviços realizados.
+    </p>
+    <h1>Nossos resultados</h1>
+
+    <div class="contador">
+        <h2 id="numero">0</h2>
+        <p>Clientes atendidos</p>
+
+        <button id="iniciar">Iniciar contador</button>
+    </div>
+
+    <script>
+        let numero = document.getElementById("numero");
+        let botao = document.getElementById("iniciar");
+        let valor = 0;
+        let limite = 100;
+
+        botao.addEventListener('click', ()=>{
+            let intervalo = setInterval(function(){
+                valor++;
+                numero.textContent = valor;
+                if(valor > limite){
+                    clearInterval(intervalo);
+                }
+            },30);
+        });
+    </script>
+</body>
+</html>
