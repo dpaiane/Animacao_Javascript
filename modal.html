@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .conteudo {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            border-radius: 10px;
+        }
+        .fechar {
+            float: right;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Janela modal - Popup</h1>
+    <p>É utilizada para exibir avisos, furmulários, confimeções e informações adicionais.</p>
+    <h2>Minha página</h2>
+
+    <button id="abrir">Abrir janela</button>
+
+    <!-- fundo janela -->
+    <div id="modal" class="modal">
+        <div class="conteudo">
+            <span id="fechar" class="fechar">&times;</span>
+            <h2>Atenção</h2>
+            <p>Esta é uma janela criada com javascript.</p>
+        </div>
+    </div>
+
+    <script>
+        let modal = document.getElementById("modal");
+        let abrir = document.getElementById("abrir");
+        let fechar = document.getElementById("fechar");
+
+        // abrir a janela
+        abrir.addEventListener("click", ()=>{
+            modal.style.display = "flex";
+        });
+
+        // quando fecha no x
+        fechar.addEventListener("click", ()=>{
+            modal.style.display = "none";
+        });
+
+        // fechar quando clica fora da janela
+        modal.addEventListener("click", (evento)=>{
+            if(evento.target === modal){
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
